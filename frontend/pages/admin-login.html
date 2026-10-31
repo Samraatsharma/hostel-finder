@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login - Hostel Finder</title>
+  <link rel="stylesheet" href="../css/global.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Hostel Finder</span>
+      </a>
+      <nav class="nav">
+        <a class="btn" href="./index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 18px 0;">
+    <h1 class="title">Admin Login</h1>
+    <p class="subtitle">Only administrators can access this portal.</p>
+
+    <div class="card" style="max-width:520px;">
+      <div class="card-body">
+        <div class="field">
+          <div class="label">Admin Email</div>
+          <input id="email" class="input" placeholder="admin@example.com" />
+        </div>
+        <div class="field">
+          <div class="label">Password</div>
+          <input id="password" type="password" class="input" placeholder="••••••••" />
+        </div>
+
+        <div id="msg" class="notice" style="display:none; margin-top:16px;"></div>
+
+        <button id="loginBtn" class="btn btn-primary" style="width:100%;">Login to Dashboard</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="../js/adminAuth.js"></script>
+</body>
+
+</html>

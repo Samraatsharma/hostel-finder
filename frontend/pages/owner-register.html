@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owner Register - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Hostel Finder</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./index.html">Home</a>
+          <a class="btn" href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 18px 0;">
+      <h1 class="title">Hostel Owner Registration</h1>
+      <p class="subtitle">Complete the form to register as a hostel owner. Admin will verify your account shortly.</p>
+
+      <div class="card" style="max-width:520px;">
+        <div class="card-body">
+          <div id="registerSection">
+            <h3 style="margin-top:0;">Owner Details</h3>
+            <div class="field"><div class="label">Full Name</div><input id="name" class="input" placeholder="Owner name" /></div>
+            
+            <div class="field">
+              <div class="label" style="display:flex; justify-content:space-between;">
+                 <span>Email</span>
+                 <a href="#" id="regSendOtpBtn" style="color:var(--primary); text-decoration:none;">Verify via OTP</a>
+              </div>
+              <input id="email" class="input" placeholder="owner@example.com" />
+            </div>
+
+            <div id="regOtpField" class="field" style="display:none; background:rgba(0,0,0,0.05); padding:10px; border-radius:8px;">
+               <div class="label">Enter OTP sent to email</div>
+               <div style="display:flex; gap:8px; align-items:center;">
+                 <input id="regOtpCode" class="input" placeholder="123456" maxlength="6" />
+                 <button id="regVerifyOtpBtn" class="btn btn-primary">Verify</button>
+               </div>
+               <div id="regOtpStatus" style="font-size:13px; color:green; font-weight:bold; display:none; margin-top:8px;">Email Verified ✓</div>
+            </div>
+
+            <div class="field"><div class="label">Phone</div><input id="phone" class="input" placeholder="91-XXXXXXXXXX" /></div>
+            <div class="field"><div class="label">Password</div><input id="password" class="input" type="password" placeholder="••••••••" /></div>
+            
+            <div class="field">
+              <div class="label">Aadhaar Card (Photo/PDF)</div>
+              <input type="file" id="aadhaarFile" class="input" accept="image/*,.pdf" />
+              <div class="muted" style="font-size:12px; margin-top:4px;">Mandatory for account verification.</div>
+            </div>
+
+            <button id="regBtn" class="btn btn-primary" style="width:100%;">Create Owner Account</button>
+            <div style="text-align:center; margin-top:16px; font-size:14px;">
+              Already registered? <a href="./login.html">Login Here</a>
+            </div>
+          </div>
+
+          <div id="msg" class="notice" style="display:none; margin-top:16px;"></div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../js/ownerRegister.js"></script>
+  </body>
+</html>

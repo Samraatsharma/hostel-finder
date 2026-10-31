@@ -59,8 +59,16 @@ if (Test-Port -Port 8080) {
     
     # Start backend in new window
     $backendPath = Join-Path $projectRoot "backend"
+    $mvnArgs = "mvnw spring-boot:run"
+    if (Test-Port -Port 3306) {
+        Write-Host "      ✓ MySQL detected on port 3306. Using MySQL." -ForegroundColor Green
+    } else {
+        Write-Host "      ℹ MySQL not detected. Using embedded H2 database (in-memory)." -ForegroundColor Yellow
+        $mvnArgs = "mvnw spring-boot:run -Dspring-boot.run.profiles=h2"
+    }
+
     Start-Process -FilePath "cmd.exe" `
-        -ArgumentList "/k cd /d `"$backendPath`" && mvnw spring-boot:run" `
+        -ArgumentList "/k cd /d `"$backendPath`" && $mvnArgs" `
         -WindowStyle Normal `
         -PassThru
     

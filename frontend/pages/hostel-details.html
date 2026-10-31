@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hostel Details - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Hostel Finder</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./index.html">Back to search</a>
+          <a class="btn" href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 18px 0;">
+      <div id="details" class="card">
+        <div class="card-body">
+          <div class="notice">Loading hostel details...</div>
+        </div>
+      </div>
+
+      <div style="height: 14px;"></div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 style="margin:0 0 10px;">Send inquiry (login required)</h2>
+          <div class="field">
+            <div class="label">Rooms needed</div>
+            <input id="roomCount" class="input" value="1" inputmode="numeric" />
+          </div>
+          <div class="field">
+            <div class="label">Message</div>
+            <textarea id="message" class="textarea" placeholder="Hi, I want to know about availability and rules..."></textarea>
+          </div>
+          <div id="inqMsg" class="notice" style="display:none;"></div>
+          <div style="display:flex; gap:10px; margin-top:10px;">
+            <button id="sendInquiryBtn" class="btn btn-primary">Send Inquiry</button>
+            <button id="bookingBtn" class="btn btn-primary">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../js/hostelDetails.js"></script>
+  </body>
+</html>

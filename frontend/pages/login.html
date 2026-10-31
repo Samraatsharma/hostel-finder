@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login & Register - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Hostel Finder</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 18px 0;">
+      <h1 class="title">User Portal</h1>
+      <p class="subtitle">Secure authentication for students and owners.</p>
+
+      <div class="card" style="max-width:520px;">
+        <div class="card-body">
+          <div style="display:flex; justify-content:center; gap:8px; margin-bottom:16px;">
+            <button id="toggleLoginBtn" class="btn btn-primary" style="flex:1;">Login</button>
+            <button id="toggleRegisterBtn" class="btn" style="flex:1;">Student Register</button>
+          </div>
+
+          <!-- LOGIN TAB -->
+          <div id="loginSection">
+            <h3 style="margin-top:0;">Login</h3>
+            <div class="field">
+              <div class="label">Email</div>
+              <input id="loginEmail" class="input" placeholder="you@example.com" />
+            </div>
+            
+            <div id="passwordLoginBlock">
+              <div class="field">
+                <div class="label">Password</div>
+                <input id="loginPassword" type="password" class="input" placeholder="••••••••" />
+              </div>
+              <button id="loginSubmitBtn" class="btn btn-primary" style="width:100%;">Login</button>
+              <div style="text-align:center; margin-top:10px; font-size:14px;">
+                 <a href="#" id="useOtpLoginBtn">Or Login with OTP</a>
+              </div>
+            </div>
+
+            <div id="otpLoginBlock" style="display:none;">
+              <button id="loginSendOtpBtn" class="btn btn-secondary" style="width:100%; margin-bottom:10px;">Send OTP to Email</button>
+              
+              <div id="loginOtpField" style="display:none; margin-bottom: 10px;">
+                <div class="field">
+                  <div class="label">Enter 6-digit OTP</div>
+                  <input id="loginOtpCode" class="input" placeholder="123456" maxlength="6" />
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <button id="loginVerifyOtpBtn" class="btn btn-primary" style="flex:1;">Verify & Login</button>
+                  <button id="loginResendOtpBtn" class="btn" disabled style="flex:1;">Resend (30s)</button>
+                </div>
+              </div>
+              <div style="text-align:center; margin-top:10px; font-size:14px;">
+                 <a href="#" id="usePasswordLoginBtn">Or Login with Password</a>
+              </div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px; font-size:14px; display:grid; gap:8px;">
+              <div class="muted">Are you a hostel owner? <a href="./owner-register.html" style="color:var(--primary); font-weight:bold;">Register as Owner</a></div>
+            </div>
+          </div>
+
+          <!-- REGISTER TAB -->
+          <div id="registerSection" style="display:none;">
+            <h3 style="margin-top:0;">Student Registration</h3>
+            <div class="field">
+              <div class="label">Full Name</div>
+              <input id="regName" class="input" placeholder="John Doe" />
+            </div>
+            <div class="field">
+              <div class="label" style="display:flex; justify-content:space-between;">
+                 <span>Email</span>
+                 <a href="#" id="regSendOtpBtn" style="color:var(--primary); text-decoration:none;">Verify via OTP</a>
+              </div>
+              <input id="regEmail" class="input" placeholder="you@example.com" />
+            </div>
+
+            <div id="regOtpField" class="field" style="display:none; background:rgba(0,0,0,0.05); padding:10px; border-radius:8px;">
+               <div class="label">Enter OTP sent to email</div>
+               <div style="display:flex; gap:8px; align-items:center;">
+                 <input id="regOtpCode" class="input" placeholder="123456" maxlength="6" />
+                 <button id="regVerifyOtpBtn" class="btn btn-primary">Verify</button>
+               </div>
+               <div id="regOtpStatus" style="font-size:13px; color:green; font-weight:bold; display:none; margin-top:8px;">Email Verified ✓</div>
+            </div>
+
+            <div class="field">
+              <div class="label">Phone</div>
+              <input id="regPhone" class="input" placeholder="1234567890" />
+            </div>
+            <div class="field">
+              <div class="label">Password</div>
+              <input id="regPassword" type="password" class="input" placeholder="••••••••" />
+            </div>
+            <div class="field" style="display:flex; gap:12px;">
+              <div style="flex:1;">
+                <div class="label">Gender</div>
+                <select id="regGender" class="select">
+                  <option value="MALE">Male</option>
+                  <option value="FEMALE">Female</option>
+                  <option value="OTHER">Other</option>
+                </select>
+              </div>
+              <div style="flex:1;">
+                <div class="label">Age</div>
+                <input id="regAge" type="number" class="input" placeholder="20" />
+              </div>
+            </div>
+            <button id="registerSubmitBtn" class="btn btn-primary" style="width:100%;">Create Account</button>
+          </div>
+
+          <div id="msg" class="notice" style="display:none; margin-top:16px;"></div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+  </body>
+</html>

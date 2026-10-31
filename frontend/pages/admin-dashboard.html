@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Admin Panel</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./admin-owners.html">Verify Owners</a>
+          <a class="btn" href="./index.html">Public site</a>
+          <button id="logoutBtn" class="btn">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 18px 0;">
+      <h1 class="title">Admin Dashboard</h1>
+      <div class="notice">
+        <strong>Core admin flow:</strong> verify owners, manage hostels, and remove hostels from the public index when needed.
+      </div>
+      <div id="adminHostelsMessage" class="notice" style="display:none; margin-top:12px;"></div>
+      <div class="card" style="margin-top:14px;">
+        <div class="card-body">
+          <h2 style="margin:0 0 10px;">All Hostels</h2>
+          <div id="adminHostelsList" class="notice">Loading hostels...</div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../js/adminHostels.js"></script>
+  </body>
+</html>

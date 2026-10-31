@@ -1,0 +1,68 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Maven Start Up Batch script
+# ----------------------------------------------------------------------------
+
+# Resolve script directory
+PRG="$0"
+while [ -h "$PRG" ]; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG=`dirname "$PRG"`"/$link"
+  fi
+done
+BASE_DIR=`dirname "$PRG"`
+BASE_DIR=`cd "$BASE_DIR" && pwd`
+
+# Check for Java runtime, fall back to known scratch JDK if available
+if [ -z "$JAVA_HOME" ]; then
+  if java -version >/dev/null 2>&1; then
+    :
+  elif [ -d "/Users/samraatsharma/.gemini/antigravity/scratch/jdk-17.0.10+7/Contents/Home" ]; then
+    export JAVA_HOME="/Users/samraatsharma/.gemini/antigravity/scratch/jdk-17.0.10+7/Contents/Home"
+    export PATH="$JAVA_HOME/bin:$PATH"
+  fi
+fi
+
+if [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ]; then
+  JAVACMD="$JAVA_HOME/bin/java"
+else
+  JAVACMD="java"
+fi
+
+# Multi-module project directory
+MAVEN_PROJECTBASEDIR="$BASE_DIR"
+export MAVEN_PROJECTBASEDIR
+
+WRAPPER_JAR="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"
+
+# Check if installed maven binary is available in wrapper dists
+MVN_BIN=$(find /Users/samraatsharma/.gemini/antigravity/scratch/.m2/wrapper/dists -name "mvn" 2>/dev/null | head -n 1)
+
+REPO_ARG=""
+case "$*" in
+  *maven.repo.local*) ;;
+  *)
+    if [ -d "/Users/samraatsharma/.gemini/antigravity/scratch/.m2/repository" ]; then
+      REPO_ARG="-Dmaven.repo.local=/Users/samraatsharma/.gemini/antigravity/scratch/.m2/repository"
+    fi
+    ;;
+esac
+
+if [ -n "$MVN_BIN" ] && [ -x "$MVN_BIN" ]; then
+  exec "$MVN_BIN" $REPO_ARG "$@"
+elif [ -f "$WRAPPER_JAR" ]; then
+  exec "$JAVACMD" \
+    "-Dmaven.home=$BASE_DIR/.mvn/wrapper" \
+    "-Dmaven.multiModuleProjectDirectory=$BASE_DIR" \
+    -cp "$WRAPPER_JAR" \
+    org.apache.maven.wrapper.MavenWrapperMain $REPO_ARG "$@"
+elif command -v mvn >/dev/null 2>&1; then
+  exec mvn $REPO_ARG "$@"
+else
+  echo "[ERROR] Maven or maven wrapper not found!" >&2
+  exit 1
+fi

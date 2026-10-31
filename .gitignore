@@ -46,8 +46,11 @@ build/
 *.ear
 
 # Maven wrapper
-mvnw
-mvnw.cmd
+!mvnw
+!mvnw.cmd
+!**/mvnw
+!**/mvnw.cmd
+!**/.mvn/wrapper/maven-wrapper.jar
 
 # IDEs
 .idea/

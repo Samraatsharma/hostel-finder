@@ -38,7 +38,14 @@ echo.
 cd /d "%~dp0backend"
 
 if exist "mvnw.cmd" (
-    start "Hostel Finder - BACKEND" cmd /c "mvnw spring-boot:run & pause"
+    netstat -ano | findstr ":3306" >nul 2>&1
+    if %errorlevel%==0 (
+        echo        [✓] MySQL detected on port 3306. Using MySQL database.
+        start "Hostel Finder - BACKEND" cmd /c "mvnw.cmd spring-boot:run & pause"
+    ) else (
+        echo        [ℹ] MySQL not detected. Using embedded H2 database (in-memory).
+        start "Hostel Finder - BACKEND" cmd /c "mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=h2 & pause"
+    )
 ) else (
     echo [ERROR] Maven wrapper not found!
     pause

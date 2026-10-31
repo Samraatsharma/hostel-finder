@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owner Inquiries - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./owner-dashboard.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Owner Panel</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./owner-dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 18px 0;">
+      <h1 class="title">Inquiries</h1>
+      <div class="notice">
+        <strong>Data flow:</strong> Owner opens inbox → `GET /api/owner/inquiries` → Accept/Reject calls backend.
+      </div>
+    </main>
+  </body>
+</html>

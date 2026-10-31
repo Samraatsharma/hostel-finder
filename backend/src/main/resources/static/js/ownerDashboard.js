@@ -1,4 +1,4 @@
-import { apiFetch, getToken } from "./apiClient.js";
+import { apiFetch, getToken, API_BASE } from "./apiClient.js";
 
 const els = {
   hostelList: document.getElementById("hostelList"),
@@ -392,7 +392,7 @@ function uploadImages(hostelId, files) {
     files.forEach((item) => formData.append("files", item.file));
 
     const request = new XMLHttpRequest();
-    request.open("POST", `http://localhost:8080/api/owner/hostels/${hostelId}/images`);
+    request.open("POST", `${API_BASE}/owner/hostels/${hostelId}/images`);
     const token = getToken();
     if (token) request.setRequestHeader("Authorization", `Bearer ${token}`);
 

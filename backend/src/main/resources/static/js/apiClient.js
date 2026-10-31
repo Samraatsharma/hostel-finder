@@ -1,4 +1,12 @@
-const API_BASE = "http://localhost:8080/api";
+export const API_BASE = (() => {
+  if (typeof window === "undefined") return "/api";
+  if (window.API_BASE_OVERRIDE) return window.API_BASE_OVERRIDE;
+  if (window.location.protocol === "file:") return "http://localhost:8080/api";
+  if (window.location.port === "5500" || window.location.port === "5000") {
+    return "http://localhost:8080/api";
+  }
+  return "/api";
+})();
 
 // Retry configuration
 const MAX_RETRIES = 3;

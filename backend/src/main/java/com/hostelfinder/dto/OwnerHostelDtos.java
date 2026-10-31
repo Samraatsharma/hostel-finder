@@ -10,7 +10,11 @@ public class OwnerHostelDtos {
     BigDecimal pricePerMonth,
     int totalRooms,
     int availableRooms
-  ) {}
+  ) {
+    public RoomTypeRequest(String roomType, BigDecimal pricePerMonth, int totalRooms, int availableRooms) {
+      this(null, roomType, pricePerMonth, totalRooms, availableRooms);
+    }
+  }
 
   public record CreateHostelRequest(
     String hostelName,

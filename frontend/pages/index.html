@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hostel Finder - Indore</title>
+  <link rel="stylesheet" href="../css/global.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Hostel Finder</span>
+      </a>
+      <div class="topbar-search" role="search" aria-label="Search hostels">
+        <input
+          id="keywordInput"
+          class="input topbar-search-input"
+          type="search"
+          placeholder="Search hostels, facilities, area, city..."
+          aria-label="Search hostels, facilities, area, or city"
+        />
+        <button id="keywordSearchBtn" class="btn btn-primary topbar-search-btn" type="button">Search</button>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="./login.html">Login / Register</a>
+        <a class="btn btn-primary" href="./owner-register.html">List Your Hostel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="title">Find a hostel in Indore</h1>
+    <p class="subtitle">Filter by area, price, gender type, facilities — and see real-time availability.</p>
+
+    <div class="grid">
+      <aside class="card">
+        <div class="card-body">
+          <div class="field">
+            <div class="label">Area</div>
+            <select id="areaSelect" class="select">
+              <option value="">All areas</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <div class="label">Gender type</div>
+            <select id="genderSelect" class="select">
+              <option value="">Any</option>
+              <option value="BOYS">Boys</option>
+              <option value="GIRLS">Girls</option>
+              <option value="COED">Co-ed</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <div class="label">Price range (per month)</div>
+            <div class="price-range-card">
+              <div class="price-range-values">
+                <div class="price-pill">
+                  <span class="price-pill-label">Min</span>
+                  <strong id="minPriceValue">Rs 4,000</strong>
+                </div>
+                <div class="price-pill">
+                  <span class="price-pill-label">Max</span>
+                  <strong id="maxPriceValue">Rs 12,000</strong>
+                </div>
+              </div>
+              <div class="price-slider-wrap">
+                <div class="price-slider-track"></div>
+                <div id="priceSliderFill" class="price-slider-fill"></div>
+                <input id="minPrice" class="price-range-input price-range-input-min" type="range" min="2000" max="20000" step="500" value="4000" />
+                <input id="maxPrice" class="price-range-input price-range-input-max" type="range" min="2000" max="20000" step="500" value="12000" />
+              </div>
+              <div class="price-range-scale">
+                <span>Rs 2,000</span>
+                <span>Rs 20,000</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="chip">
+              <input id="availableOnly" type="checkbox" />
+              Available rooms only
+            </label>
+          </div>
+
+          <div class="field">
+            <div class="label">Facilities</div>
+            <div id="facilityChips" class="chips"></div>
+          </div>
+
+          <button id="searchBtn" class="btn btn-primary" style="width:100%;">Search</button>
+        </div>
+      </aside>
+
+      <section>
+        <div id="hostelList" class="hostel-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border); text-align: center;">
+    <div class="container">
+      <p style="font-size: 14px; color: var(--text-muted);">&copy; 2026 Hostel Finder. All rights reserved.</p>
+      <div style="margin-top: 8px;">
+        <a href="./admin-login.html" style="font-size: 13px; color: var(--text-muted); text-decoration: none;">Admin
+          Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/publicSearch.js"></script>
+</body>
+
+</html>

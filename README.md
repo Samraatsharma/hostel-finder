@@ -8,18 +8,22 @@ Quick overview
 - Uploads: `uploads/` (user-provided files)
 
 Prerequisites
-- Java 17+ and Maven for the backend
-- A modern browser for the frontend
+- Java 17+
+- Python 3 (for static frontend serving)
+- MySQL 8+ (Optional: if MySQL is not running on port 3306, the app automatically runs with embedded H2 database with demo data)
 
-Run (local, platform-specific scripts included)
-Use the included helper scripts in the project root:
-
-Windows (PowerShell / CMD):
-
+Run (macOS / Linux):
+```bash
+./run.sh            # Starts both Backend & Frontend and opens the browser
+./run-backend.sh    # Starts Backend on http://localhost:8080
+./run-frontend.sh   # Starts Frontend on http://localhost:3000
 ```
-./run.bat
-./run-backend.bat
-./run-frontend.bat
+
+Run (Windows):
+```bat
+run.bat             # Starts both Backend & Frontend and opens the browser
+run-backend.bat     # Starts Backend only
+run-frontend.bat    # Starts Frontend only
 ```
 
 Notes

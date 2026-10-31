@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Dashboard - Hostel Finder</title>
+    <link rel="stylesheet" href="../css/global.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>Hostel Finder</span>
+        </a>
+        <nav class="nav">
+          <a class="btn" href="./index.html">Find Hostels</a>
+          <button id="logoutBtn" class="btn">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding: 24px 0;">
+      <h1 class="title">My Inquiries</h1>
+      <p class="subtitle">Check the status of your hostel inquiries below.</p>
+      
+      <div id="inquiryList" class="grid" style="grid-template-columns: 1fr; gap:12px;"></div>
+    </main>
+
+    <script type="module" src="../js/studentDashboard.js"></script>
+  </body>
+</html>
